@@ -14,7 +14,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 
-@Table(name="car")
+@Table(name="data")
 public class Car {
 
     @Id
