@@ -1,4 +1,4 @@
-package com.medkhalil.CarAPI.Controller;
+package com.medkhalil.CarAPI.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
