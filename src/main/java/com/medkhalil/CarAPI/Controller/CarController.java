@@ -1,12 +1,15 @@
 package com.medkhalil.CarAPI.controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.medkhalil.CarAPI.model.Car;
@@ -36,5 +39,15 @@ public class CarController {
             return true;
         }
         return false;
+    }
+
+    @PutMapping("/update/{id}")
+    public Car updateCar(@PathVariable("id") Integer id,@RequestBody Map<String,String> body){
+        Car current = mySqlRepository.findById(id).get();
+        current.setPrix(Integer.parseInt(body.get("prix")));
+        current.setKilometrage(Integer.parseInt(body.get("kilometrage")));
+        current.setModel(body.get("model"));
+        mySqlRepository.save(current);
+        return current;
     }
 }
