@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.medkhalil.CarAPI.model.Car;
+import com.medkhalil.CarAPI.model.Modele;
 import com.medkhalil.CarAPI.repository.MySqlRepository;
 import com.mysql.cj.protocol.a.MysqlBinaryValueDecoder;
 
@@ -43,11 +44,13 @@ public class CarController {
     }
 
     @PutMapping("/update/{id}")
-    public Car updateCar(@PathVariable("id") Integer id,@RequestBody Map<String,String> body){
+    public Car updateCar(@PathVariable("id") Integer id,@RequestBody Car voiture){
+    	// Start by doing a check on the request validity. if the request is wrong. try to raise custom exceptions   
         Car current = mySqlRepository.findById(id).get();
-        current.setPrix(Integer.parseInt(body.get("prix")));
-        current.setKilometrage(Integer.parseInt(body.get("kilometrage")));
-        current.setModel(body.get("model"));
+        current.setPrix(voiture.getPrix());
+        current.setKilometrage(voiture.getKilometrage());
+        current.setModele(voiture.getModele());
+        current.setMarque(voiture.getMarque());
         mySqlRepository.save(current);
         return current;
     }
