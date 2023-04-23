@@ -1,12 +1,11 @@
 package com.medkhalil.CarAPI.model;
 
-import java.io.Serializable;
 
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.ManyToOne;
 
 @Embeddable
-public class ModelMarquePk  implements Serializable {
+public class ModelMarquePk   {
 	
 	@ManyToOne
 	private Marque marque;

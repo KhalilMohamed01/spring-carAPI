@@ -32,11 +32,9 @@ public class Car {
     @Column(name = "id", unique = true,nullable = false)
     private Integer id;
 
-    
     @ManyToOne
     private Marque marque;
 
-   
     @ManyToOne
     private Modele modele;
     
