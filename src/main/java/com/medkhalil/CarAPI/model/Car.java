@@ -28,7 +28,7 @@ import lombok.Setter;
 public class Car {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // AUTO_INCREMENT ( You can use SEQUENCE as a GenerationType for a sequence-based generation)
+    @GeneratedValue(strategy = GenerationType.AUTO) // AUTO_INCREMENT ( You can use SEQUENCE as a GenerationType for a sequence-based generation)
     @Column(name = "id", unique = true,nullable = false)
     private Integer id;
 
