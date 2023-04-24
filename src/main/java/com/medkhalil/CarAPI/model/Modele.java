@@ -21,7 +21,7 @@ import lombok.Setter;
 public class Modele {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id", unique = true,nullable = false)
 	private Integer modele_id;
 	

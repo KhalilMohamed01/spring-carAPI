@@ -27,7 +27,7 @@ public class MarqueController {
     
   
     @GetMapping("/get-all-brands")
-    public List<Marque> getAllModels(){
+    public List<Marque> getAllBrands(){
         return marqueService.findAll();
     }
 

@@ -93,6 +93,8 @@ public class CarServiceImpl implements CarService{
     	car.setAnnee(createOrUpdateReq.getAnnee());
     	car.setEnergie(createOrUpdateReq.getEnergie());
     	car.setBoiteVitesse(createOrUpdateReq.getBoiteVitesse());
+    	car.setNbPlace(createOrUpdateReq.getNbPlace());
+    	car.setNbPorte(createOrUpdateReq.getNbPorte());
 		return carRepository.save(car);
 	}
 
