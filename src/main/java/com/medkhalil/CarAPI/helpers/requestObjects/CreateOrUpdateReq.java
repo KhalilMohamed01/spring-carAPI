@@ -1,5 +1,6 @@
 package com.medkhalil.CarAPI.helpers.requestObjects;
 
+import com.medkhalil.CarAPI.helpers.abstracts.AbstractObject;
 import com.medkhalil.CarAPI.model.Marque;
 import com.medkhalil.CarAPI.model.Modele;
 
@@ -13,16 +14,8 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateOrUpdateReq {
+public class CreateOrUpdateReq  extends AbstractObject{ 
 
-    private Integer marque_id;
-
-   
-    private Integer modele_id;
-    
-
-    private Integer annee;
-    
 
     private String energie;
     
@@ -38,7 +31,6 @@ public class CreateOrUpdateReq {
 
     private Integer nbPorte;
     
-    
-    private Integer prix;
+
 }
 
